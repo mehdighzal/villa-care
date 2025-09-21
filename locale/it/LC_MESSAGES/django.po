@@ -1,0 +1,375 @@
+# Italian translations for VillaCare
+# Copyright (C) 2025 VillaCare
+# This file is distributed under the same license as the VillaCare project.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VillaCare 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-21 18:00+0000\n"
+"PO-Revision-Date: 2025-01-21 18:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Italian\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Home page
+msgid "Home"
+msgstr "Home"
+
+msgid "About"
+msgstr "Chi Siamo"
+
+msgid "Services"
+msgstr "Servizi"
+
+msgid "Packages"
+msgstr "Pacchetti"
+
+msgid "Contact"
+msgstr "Contatti"
+
+msgid "Reviews"
+msgstr "Recensioni"
+
+msgid "Login"
+msgstr "Accedi"
+
+msgid "Register"
+msgstr "Registrati"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "My Reports"
+msgstr "I Miei Report"
+
+msgid "Profile"
+msgstr "Profilo"
+
+msgid "Logout"
+msgstr "Esci"
+
+msgid "Admin Dashboard"
+msgstr "Dashboard Admin"
+
+msgid "Create Report"
+msgstr "Crea Report"
+
+msgid "Django Admin"
+msgstr "Admin Django"
+
+# Villa Care specific
+msgid "VillaCare"
+msgstr "VillaCare"
+
+msgid "Luxury Villa Care Services"
+msgstr "Servizi di Cura Villa di Lusso"
+
+msgid "Premium villa maintenance and care services"
+msgstr "Servizi premium di manutenzione e cura delle ville"
+
+msgid "Subscribe Now"
+msgstr "Abbonati Ora"
+
+msgid "Your Name"
+msgstr "Il Tuo Nome"
+
+msgid "Your Email"
+msgstr "La Tua Email"
+
+msgid "Your Message"
+msgstr "Il Tuo Messaggio"
+
+msgid "Send Message"
+msgstr "Invia Messaggio"
+
+msgid "Add Review"
+msgstr "Aggiungi Recensione"
+
+msgid "Your Review"
+msgstr "La Tua Recensione"
+
+msgid "Submit Review"
+msgstr "Invia Recensione"
+
+# Report system
+msgid "Report Type"
+msgstr "Tipo di Report"
+
+msgid "Priority"
+msgstr "Priorità"
+
+msgid "Title"
+msgstr "Titolo"
+
+msgid "Description"
+msgstr "Descrizione"
+
+msgid "Location"
+msgstr "Posizione"
+
+msgid "Status"
+msgstr "Stato"
+
+msgid "Created At"
+msgstr "Creato il"
+
+msgid "Updated At"
+msgstr "Aggiornato il"
+
+msgid "Comments"
+msgstr "Commenti"
+
+msgid "Add Comment"
+msgstr "Aggiungi Commento"
+
+msgid "Admin Comment"
+msgstr "Commento Admin"
+
+msgid "Client Comment"
+msgstr "Commento Cliente"
+
+# Status choices
+msgid "Pending"
+msgstr "In Attesa"
+
+msgid "In Progress"
+msgstr "In Corso"
+
+msgid "Completed"
+msgstr "Completato"
+
+msgid "Cancelled"
+msgstr "Annullato"
+
+# Priority choices
+msgid "Low"
+msgstr "Bassa"
+
+msgid "Medium"
+msgstr "Media"
+
+msgid "High"
+msgstr "Alta"
+
+msgid "Urgent"
+msgstr "Urgente"
+
+# Report types
+msgid "Maintenance Issue"
+msgstr "Problema di Manutenzione"
+
+msgid "Cleaning Request"
+msgstr "Richiesta di Pulizia"
+
+msgid "Security Concern"
+msgstr "Problema di Sicurezza"
+
+msgid "Landscaping"
+msgstr "Giardinaggio"
+
+msgid "Pool/Spa Issue"
+msgstr "Problema Piscina/Spa"
+
+msgid "Emergency"
+msgstr "Emergenza"
+
+msgid "Other"
+msgstr "Altro"
+
+# Additional translations for home page content
+msgid "Luxury Villa Service Excellence"
+msgstr "Eccellenza nei Servizi per Ville di Lusso"
+
+msgid "Experience the pinnacle of villa care services. We provide comprehensive maintenance, management, and care solutions for your luxury properties with unmatched attention to detail."
+msgstr "Sperimenta il vertice dei servizi di cura delle ville. Forniamo soluzioni complete di manutenzione, gestione e cura per le tue proprietà di lusso con un'attenzione ai dettagli senza pari."
+
+msgid "View Packages"
+msgstr "Visualizza Pacchetti"
+
+msgid "Get Started"
+msgstr "Inizia Ora"
+
+msgid "Our Work"
+msgstr "Il Nostro Lavoro"
+
+msgid "About VillaCare"
+msgstr "Chi Siamo VillaCare"
+
+msgid "Excellence in luxury villa care and management"
+msgstr "Eccellenza nella cura e gestione di ville di lusso"
+
+msgid "VillaCare is the premier destination for luxury villa owners who demand nothing but the best. With over a decade of experience in high-end property management, we understand the unique needs of luxury villa ownership."
+msgstr "VillaCare è la destinazione principale per i proprietari di ville di lusso che non accettano altro che il meglio. Con oltre un decennio di esperienza nella gestione di proprietà di alto livello, comprendiamo le esigenze uniche della proprietà di ville di lusso."
+
+msgid "Our team of certified professionals provides comprehensive care services including maintenance, landscaping, security, and concierge services. We pride ourselves on maintaining the highest standards of excellence while ensuring your villa remains a sanctuary of luxury and comfort."
+msgstr "Il nostro team di professionisti certificati fornisce servizi di cura completi inclusi manutenzione, paesaggistica, sicurezza e servizi di concierge. Siamo orgogliosi di mantenere i più alti standard di eccellenza garantendo che la tua villa rimanga un santuario di lusso e comfort."
+
+msgid "From routine maintenance to emergency services, VillaCare is your trusted partner in preserving and enhancing the value of your luxury property. Experience the difference that professional villa care can make."
+msgstr "Dalla manutenzione di routine ai servizi di emergenza, VillaCare è il tuo partner di fiducia nel preservare e migliorare il valore della tua proprietà di lusso. Sperimenta la differenza che può fare una cura professionale della villa."
+
+msgid "Our Services"
+msgstr "I Nostri Servizi"
+
+msgid "Comprehensive villa care solutions tailored to your needs"
+msgstr "Soluzioni complete di cura delle ville su misura per le tue esigenze"
+
+msgid "Maintenance & Repairs"
+msgstr "Manutenzione e Riparazioni"
+
+msgid "Professional maintenance services including HVAC, plumbing, electrical, and structural repairs to keep your villa in perfect condition."
+msgstr "Servizi di manutenzione professionale inclusi HVAC, idraulica, elettrica e riparazioni strutturali per mantenere la tua villa in condizioni perfette."
+
+msgid "Landscaping & Garden Care"
+msgstr "Paesaggistica e Cura del Giardino"
+
+msgid "Expert landscaping services to maintain beautiful gardens, lawns, and outdoor spaces that complement your luxury villa."
+msgstr "Servizi di paesaggistica esperti per mantenere bellissimi giardini, prati e spazi esterni che si completano con la tua villa di lusso."
+
+msgid "Security & Monitoring"
+msgstr "Sicurezza e Monitoraggio"
+
+msgid "24/7 security monitoring and surveillance systems to ensure the safety and protection of your property and belongings."
+msgstr "Monitoraggio di sicurezza 24/7 e sistemi di sorveglianza per garantire la sicurezza e la protezione della tua proprietà e dei tuoi beni."
+
+msgid "Concierge Services"
+msgstr "Servizi di Concierge"
+
+msgid "Premium concierge services including housekeeping, event planning, and personal assistance to enhance your villa experience."
+msgstr "Servizi di concierge premium inclusi pulizie, organizzazione eventi e assistenza personale per migliorare la tua esperienza in villa."
+
+msgid "Pool & Spa Maintenance"
+msgstr "Manutenzione Piscina e Spa"
+
+msgid "Specialized pool and spa maintenance services to keep your aquatic facilities clean, safe, and ready for use year-round."
+msgstr "Servizi specializzati di manutenzione piscina e spa per mantenere le tue strutture acquatiche pulite, sicure e pronte all'uso tutto l'anno."
+
+msgid "Property Management"
+msgstr "Gestione Proprietà"
+
+msgid "Complete property management services including tenant relations, rent collection, and property oversight for investment villas."
+msgstr "Servizi completi di gestione proprietà inclusi relazioni con inquilini, riscossione affitti e supervisione proprietà per ville di investimento."
+
+msgid "Service Packages"
+msgstr "Pacchetti di Servizio"
+
+msgid "Choose the perfect package for your villa care needs"
+msgstr "Scegli il pacchetto perfetto per le tue esigenze di cura della villa"
+
+msgid "Premium Care"
+msgstr "Cura Premium"
+
+msgid "Comprehensive care package with enhanced services and priority support."
+msgstr "Pacchetto di cura completo con servizi potenziati e supporto prioritario."
+
+msgid "Daily maintenance check"
+msgstr "Controllo manutenzione giornaliero"
+
+msgid "Premium landscaping"
+msgstr "Paesaggistica premium"
+
+msgid "Pool & spa maintenance"
+msgstr "Manutenzione piscina e spa"
+
+msgid "24/7 security monitoring"
+msgstr "Monitoraggio sicurezza 24/7"
+
+msgid "Priority emergency response"
+msgstr "Risposta emergenze prioritaria"
+
+msgid "Essential Care"
+msgstr "Cura Essenziale"
+
+msgid "Basic maintenance and care services for your luxury villa."
+msgstr "Servizi di base di manutenzione e cura per la tua villa di lusso."
+
+msgid "Weekly maintenance check"
+msgstr "Controllo manutenzione settimanale"
+
+msgid "Garden care"
+msgstr "Cura del giardino"
+
+msgid "Pool maintenance"
+msgstr "Manutenzione piscina"
+
+msgid "Basic security monitoring"
+msgstr "Monitoraggio sicurezza base"
+
+msgid "Luxury Care"
+msgstr "Cura di Lusso"
+
+msgid "Ultimate luxury villa care with white-glove service and exclusive benefits."
+msgstr "Cura definitiva di ville di lusso con servizio guanti bianchi e benefici esclusivi."
+
+msgid "24/7 on-site maintenance"
+msgstr "Manutenzione in loco 24/7"
+
+msgid "Premium landscaping & design"
+msgstr "Paesaggistica e design premium"
+
+msgid "Pool & spa management"
+msgstr "Gestione piscina e spa"
+
+msgid "Advanced security systems"
+msgstr "Sistemi di sicurezza avanzati"
+
+msgid "Full concierge services"
+msgstr "Servizi di concierge completi"
+
+msgid "Event planning & management"
+msgstr "Pianificazione e gestione eventi"
+
+msgid "Exclusive member benefits"
+msgstr "Benefici esclusivi per membri"
+
+msgid "Contact Us"
+msgstr "Contattaci"
+
+msgid "Get in touch for personalized villa care solutions"
+msgstr "Mettiti in contatto per soluzioni personalizzate di cura della villa"
+
+msgid "Your Name"
+msgstr "Il Tuo Nome"
+
+msgid "Your Email"
+msgstr "La Tua Email"
+
+msgid "Your Message"
+msgstr "Il Tuo Messaggio"
+
+msgid "Send Message"
+msgstr "Invia Messaggio"
+
+msgid "Client Reviews"
+msgstr "Recensioni Clienti"
+
+msgid "What our luxury villa owners say about us"
+msgstr "Cosa dicono di noi i proprietari di ville di lusso"
+
+msgid "Share Your Experience"
+msgstr "Condividi la Tua Esperienza"
+
+msgid "Your Review"
+msgstr "La Tua Recensione"
+
+msgid "Submit Review"
+msgstr "Invia Recensione"
+
+msgid "Quick Links"
+msgstr "Link Rapidi"
+
+msgid "Contact Info"
+msgstr "Informazioni di Contatto"
+
+msgid "Search services..."
+msgstr "Cerca servizi..."
+
+msgid "Search"
+msgstr "Cerca"
+
+msgid "© 2024 VillaCare. All rights reserved. | Luxury Villa Care Services"
+msgstr "© 2024 VillaCare. Tutti i diritti riservati. | Servizi di Cura Villa di Lusso"

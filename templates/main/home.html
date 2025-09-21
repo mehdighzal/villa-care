@@ -1,0 +1,510 @@
+{% load static %}
+{% load i18n %}
+{% load translation_tags %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VillaCare - Luxury Villa Service Platform</title>
+    <meta name="description" content="Premium villa care services for luxury property owners. Professional maintenance, management, and care solutions.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-crown me-2"></i>VillaCare
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Casa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Chi Siamo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Servizi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#packages">Pacchetti</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contatto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Recensioni</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-user me-1"></i>{{ user.first_name|default:user.username }}
+                            </a>
+                            <ul class="dropdown-menu">
+                                {% if user.is_staff %}
+                                <li><a class="dropdown-item" href="{% url 'admin_dashboard' %}"><i class="fas fa-user-shield me-2"></i>Dashboard Admin</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                            {% endif %}
+                            <li><a class="dropdown-item" href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a></li>
+                            <li><a class="dropdown-item" href="{% url 'villa_reports' %}"><i class="fas fa-clipboard-list me-2"></i>I Miei Report</a></li>
+                            <li><a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-user me-2"></i>Profilo</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="dropdown-item" style="border: none; background: none; width: 100%; text-align: left;">
+                                            <i class="fas fa-sign-out-alt me-2"></i>Esci
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Accedi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Registrati</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">VillaCare</h1>
+                <h2 class="hero-subtitle">Eccellenza nei Servizi Villa di Lusso</h2>
+                <p class="hero-description">
+                    Sperimenta l'apice dei servizi di cura della villa. Forniamo soluzioni complete di manutenzione, gestione e cura per le tue proprietà di lusso con un'attenzione ai dettagli senza pari.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#packages" class="btn btn-primary me-3">Visualizza Pacchetti</a>
+                    <a href="#contact" class="btn btn-outline-primary">Inizia</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <h2 class="section-title">Il Nostro Lavoro</h2>
+            <div id="workCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#workCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="d-block w-100" alt="Luxury Villa 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Luxury Villa 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80" class="d-block w-100" alt="Luxury Villa 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#workCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#workCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title">Chi Siamo VillaCare</h2>
+            <p class="section-subtitle">Eccellenza nella cura e gestione di ville di lusso</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        VillaCare è la destinazione principale per i proprietari di ville di lusso che richiedono solo il meglio. Con oltre un decennio di esperienza nella gestione di proprietà di alto livello, comprendiamo le esigenze uniche della proprietà di ville di lusso.
+                    </p>
+                    <p>
+                        Il nostro team di professionisti certificati fornisce servizi di cura completi inclusi manutenzione, paesaggistica, sicurezza e servizi di concierge. Siamo orgogliosi di mantenere i più alti standard di eccellenza garantendo che la tua villa rimanga un santuario di lusso e comfort.
+                    </p>
+                    <p>
+                        Dalla manutenzione di routine ai servizi di emergenza, VillaCare è il tuo partner fidato nel preservare e migliorare il valore della tua proprietà di lusso. Sperimenta la differenza che può fare la cura professionale della villa.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About VillaCare" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <h2 class="section-title">I Nostri Servizi</h2>
+            <p class="section-subtitle">Soluzioni complete di cura della villa su misura per le tue esigenze</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="service-title">Manutenzione e Riparazioni</h3>
+                    <p class="service-description">
+                        Servizi di manutenzione professionale inclusi HVAC, idraulica, elettrica e riparazioni strutturali per mantenere la tua villa in perfette condizioni.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="service-title">Paesaggistica e Cura del Giardino</h3>
+                    <p class="service-description">
+                        Servizi di paesaggistica esperti per mantenere bellissimi giardini, prati e spazi esterni che si completano con la tua villa di lusso.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Sicurezza e Monitoraggio</h3>
+                    <p class="service-description">
+                        Monitoraggio di sicurezza 24/7 e sistemi di sorveglianza per garantire la sicurezza e protezione della tua proprietà e dei tuoi beni.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3 class="service-title">Servizi di Concierge</h3>
+                    <p class="service-description">
+                        Servizi di concierge premium inclusi pulizie, pianificazione eventi e assistenza personale per migliorare la tua esperienza in villa.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3 class="service-title">Manutenzione Piscina e Spa</h3>
+                    <p class="service-description">
+                        Servizi specializzati di manutenzione piscina e spa per mantenere le tue strutture acquatiche pulite, sicure e pronte all'uso tutto l'anno.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="service-title">Gestione Proprietà</h3>
+                    <p class="service-description">
+                        Servizi completi di gestione proprietà inclusi relazioni con inquilini, riscossione affitti e supervisione proprietà per ville di investimento.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="section packages-section">
+        <div class="container">
+            <h2 class="section-title">Pacchetti di Servizio</h2>
+            <p class="section-subtitle">Scegli il pacchetto perfetto per le tue esigenze di cura della villa</p>
+            
+            <div class="packages-grid">
+                {% for package in packages %}
+                <div class="package-card">
+                    <div class="package-type">{{ package.get_package_type_display }}</div>
+                    <h3 class="package-name">{{ package.name }}</h3>
+                    <div class="package-price">
+                        ${{ package.price }}<span>/{{ package.package_type }}</span>
+                    </div>
+                    <p class="package-description">{{ package.description }}</p>
+                    
+                    <ul class="package-features">
+                        {% for feature in package.features.splitlines %}
+                            {% if feature.strip %}
+                                <li>{{ feature.strip }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    
+                    <button class="btn btn-primary subscribe-btn" data-package="{{ package.name }}">
+                        Iscriviti Ora
+                    </button>
+                </div>
+                {% empty %}
+                <!-- Default packages if none exist in database -->
+                <div class="package-card">
+                    <div class="package-type">Settimanale</div>
+                    <h3 class="package-name">Cura Essenziale</h3>
+                    <div class="package-price">
+                        €299<span>/settimana</span>
+                    </div>
+                    <p class="package-description">
+                        Servizi di manutenzione e cura di base per la tua villa di lusso.
+                    </p>
+                    <ul class="package-features">
+                        <li>Controllo manutenzione settimanale</li>
+                        <li>Cura del giardino</li>
+                        <li>Manutenzione piscina</li>
+                        <li>Monitoraggio sicurezza base</li>
+                    </ul>
+                    <button class="btn btn-primary subscribe-btn" data-package="Essential Care">
+                        Iscriviti Ora
+                    </button>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-type">Mensile</div>
+                    <h3 class="package-name">Cura Premium</h3>
+                    <div class="package-price">
+                        €1,199<span>/mese</span>
+                    </div>
+                    <p class="package-description">
+                        Pacchetto di cura completo con servizi potenziati e supporto prioritario.
+                    </p>
+                    <ul class="package-features">
+                        <li>Controllo manutenzione giornaliero</li>
+                        <li>Paesaggistica premium</li>
+                        <li>Manutenzione piscina e spa</li>
+                        <li>Monitoraggio sicurezza 24/7</li>
+                        <li>Servizi di concierge</li>
+                        <li>Risposta emergenze prioritaria</li>
+                    </ul>
+                    <button class="btn btn-primary subscribe-btn" data-package="Premium Care">
+                        Iscriviti Ora
+                    </button>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-type">Annuale</div>
+                    <h3 class="package-name">Cura di Lusso</h3>
+                    <div class="package-price">
+                        €12,999<span>/anno</span>
+                    </div>
+                    <p class="package-description">
+                        Cura villa di lusso definitiva con servizio guanti bianchi e benefici esclusivi.
+                    </p>
+                    <ul class="package-features">
+                        <li>Manutenzione in loco 24/7</li>
+                        <li>Paesaggistica e design premium</li>
+                        <li>Gestione piscina e spa</li>
+                        <li>Sistemi di sicurezza avanzati</li>
+                        <li>Servizi di concierge completi</li>
+                        <li>Pianificazione e gestione eventi</li>
+                        <li>Gestione proprietà</li>
+                        <li>Benefici esclusivi per membri</li>
+                    </ul>
+                    <button class="btn btn-primary subscribe-btn" data-package="Luxury Care">
+                        Iscriviti Ora
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Contattaci</h2>
+            <p class="section-subtitle">Mettiti in contatto per soluzioni personalizzate di cura della villa</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form id="contactForm" class="contact-form" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="contact_form" value="1">
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ contact_form.name }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ contact_form.email }}
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ contact_form.message }}
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-2"></i>Invia Messaggio
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section reviews-section">
+        <div class="container">
+            <h2 class="section-title">Recensioni Clienti</h2>
+            <p class="section-subtitle">Cosa dicono di noi i proprietari di ville di lusso</p>
+            
+            <div class="reviews-grid">
+                {% for review in reviews %}
+                <div class="review-card">
+                    <div class="review-name">{{ review.name }}</div>
+                    <div class="review-rating">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= review.rating %}
+                                <i class="fas fa-star"></i>
+                            {% else %}
+                                <i class="far fa-star"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="review-comment">"{{ review.comment }}"</p>
+                </div>
+                {% empty %}
+                <!-- Default reviews if none exist -->
+                <div class="review-card">
+                    <div class="review-name">Sarah Johnson</div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-comment">"VillaCare has transformed our property management experience. Their attention to detail and professionalism is unmatched."</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-name">Michael Chen</div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-comment">"The luxury care package exceeded all our expectations. Our villa has never looked better!"</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-name">Emma Williams</div>
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-comment">"Outstanding service and reliability. VillaCare has become an essential part of our villa ownership experience."</p>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Review Form -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form id="reviewForm" class="review-form" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="review_form" value="1">
+                        
+                        <h4 class="text-center mb-4" style="color: var(--gold);">Condividi la Tua Esperienza</h4>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ review_form.name }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ review_form.rating }}
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ review_form.comment }}
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-star me-2"></i>Invia Recensione
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5><i class="fas fa-crown me-2"></i>VillaCare</h5>
+                    <p>Premium villa care services for luxury property owners. Experience the difference that professional care can make.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Link Rapidi</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Casa</a></li>
+                        <li><a href="#about">Chi Siamo</a></li>
+                        <li><a href="#services">Servizi</a></li>
+                        <li><a href="#packages">Pacchetti</a></li>
+                        <li><a href="#contact">Contatto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Informazioni di Contatto</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>123 Luxury Lane, Premium District</p>
+                    <p><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@villacare.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Cerca</h5>
+                    <form id="searchForm" class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Cerca servizi..." class="form-control">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 VillaCare. Tutti i diritti riservati. | Servizi di Cura Villa di Lusso</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

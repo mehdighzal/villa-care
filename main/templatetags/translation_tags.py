@@ -1,0 +1,60 @@
+from django import template
+from django.utils.translation import gettext as _
+
+register = template.Library()
+
+@register.simple_tag
+def get_translation(text, language='it'):
+    """Simple translation function for template use - Italian only"""
+    translations = {
+        'Home': 'Casa',
+        'About': 'Chi Siamo',
+        'Services': 'Servizi',
+        'Packages': 'Pacchetti',
+        'Contact': 'Contatto',
+        'Reviews': 'Recensioni',
+        'Login': 'Accedi',
+        'Register': 'Registrati',
+        'Dashboard': 'Dashboard',
+        'My Reports': 'I Miei Report',
+        'Profile': 'Profilo',
+        'Logout': 'Esci',
+        'Admin Dashboard': 'Dashboard Admin',
+        'Create Report': 'Crea Report',
+        'Django Admin': 'Django Admin',
+        'VillaCare': 'VillaCare',
+        'Luxury Villa Service Excellence': 'Eccellenza nei Servizi Villa di Lusso',
+        'Experience the pinnacle of villa care services. We provide comprehensive maintenance, management, and care solutions for your luxury properties with unmatched attention to detail.': 'Sperimenta l\'apice dei servizi di cura della villa. Forniamo soluzioni complete di manutenzione, gestione e cura per le tue proprietà di lusso con un\'attenzione ai dettagli senza pari.',
+        'View Packages': 'Visualizza Pacchetti',
+        'Get Started': 'Inizia',
+        'Our Work': 'Il Nostro Lavoro',
+        'About VillaCare': 'Chi Siamo VillaCare',
+        'Excellence in luxury villa care and management': 'Eccellenza nella cura e gestione di ville di lusso',
+        'Our Services': 'I Nostri Servizi',
+        'Comprehensive villa care solutions tailored to your needs': 'Soluzioni complete di cura della villa su misura per le tue esigenze',
+        'Maintenance & Repairs': 'Manutenzione e Riparazioni',
+        'Landscaping & Garden Care': 'Paesaggistica e Cura del Giardino',
+        'Security & Monitoring': 'Sicurezza e Monitoraggio',
+        'Concierge Services': 'Servizi di Concierge',
+        'Pool & Spa Maintenance': 'Manutenzione Piscina e Spa',
+        'Property Management': 'Gestione Proprietà',
+        'Service Packages': 'Pacchetti di Servizio',
+        'Choose the perfect package for your villa care needs': 'Scegli il pacchetto perfetto per le tue esigenze di cura della villa',
+        'Contact Us': 'Contattaci',
+        'Get in touch for personalized villa care solutions': 'Mettiti in contatto per soluzioni personalizzate di cura della villa',
+        'Your Name': 'Il Tuo Nome',
+        'Your Email': 'La Tua Email',
+        'Your Message': 'Il Tuo Messaggio',
+        'Send Message': 'Invia Messaggio',
+        'Client Reviews': 'Recensioni Clienti',
+        'What our luxury villa owners say about us': 'Cosa dicono di noi i proprietari di ville di lusso',
+        'Share Your Experience': 'Condividi la Tua Esperienza',
+        'Your Review': 'La Tua Recensione',
+        'Submit Review': 'Invia Recensione',
+        'Quick Links': 'Link Rapidi',
+        'Contact Info': 'Informazioni di Contatto',
+        'Search services...': 'Cerca servizi...',
+        'Search': 'Cerca',
+        '© 2024 VillaCare. All rights reserved. | Luxury Villa Care Services': '© 2024 VillaCare. Tutti i diritti riservati. | Servizi di Cura Villa di Lusso',
+    }
+    return translations.get(text, text)
